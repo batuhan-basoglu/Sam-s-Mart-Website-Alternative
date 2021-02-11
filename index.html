@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="company-name">
+      <h1>Sam's Mart</h1>
+      <img class="cart-img" src="images/logo.png" alt="mart-img"> 
+    </div>
+
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="tab">
+      <button class="tablinks" onclick="openInfo(event, 'Client')">
+        Client
+      </button>
+      <button class="tablinks" onclick="openInfo(event, 'Products')">
+        Products
+      </button>
+      <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Client" class="tabcontent">
+      <h3>Client Information</h3>
+      <p>Tell us a bit about you.</p>
+      <i><strong>Choose a Category:</strong></i>
+      <select
+        id="dietSelect"
+        name="dietSelect"
+        class="sumo"
+        onchange="populateListProductChoices(this.id, 'displayProduct')"
+      >
+        <option value=""></option>
+
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="GlutenFree">Gluten Free</option>
+        <option value="VegetarianANDGluten-Free">
+          Vegetarian and Gluten-Free
+        </option>
+        <option value="Organic">Organic</option>
+        <option value="Non-organic">Non-Organic</option>
+        <option value="None">None</option>
+      </select>
+      <br>
+      <i><strong>Choose a Characteristic:</strong></i>
+      <select class="sumo" name="characterSelect">
+        <option value=""></option>
+        <option value="Diabetic">Diabetic</option>
+        <option value="LactoseIntolerant">Lactose intolerant</option>
+      </select>
+
+      <div class="footer">
+      <p class="copyright">
+        Website created by Ruchira, Sam, Batuhan, and Kene
+      </p>
+    </div>
+
+    </div>
+
+    <div id="Products" class="tabcontent">
+      <h3>Your targeted products</h3>
+      <p>We preselected products based on your restrictions.</p>
+      <i><strong>Choose items to buy:</strong></i>
+      <div id="displayProduct"></div>
+      <button
+        id="addCart"
+        type="button"
+        class="block"
+        onclick="selectedItems()"
+      >
+        Add selected items to cart.
+      </button>
+    <div class="footer">
+      <p class="copyright">
+        Website created by Ruchira, Sam, Batuhan, and Kene
+      </p>
+    </div>
+
+
+    </div>
+
+    <div id="Cart" class="tabcontent">
+      <h3>Cart</h3>
+      <p>Here is your cart.</p>
+      <div id="displayCart"></div>
+
+      <div class="footer">
+      <p class="copyright">
+        Website created by Ruchira, Sam, Batuhan, and Kene
+      </p>
+    </div>
+
+    </div>
+
+
+    <script src="scripts/groceries.js"></script>
+
+    <script src="scripts/main.js"></script>
+
+  </body>
+</html>
