@@ -25,8 +25,9 @@
     <!-- Tab content -->
     <div id="Client" class="tabcontent">
       <h3>Client Information</h3>
-      <p>Tell us a bit about you.</p>
-      <i><strong>Choose a Category:</strong></i>
+      <p>Hello, welcome to our grocery store. <br> 
+        We are here to help you choose the perfect groceries for your store.</p>
+      <i><strong>Please Choose a Category:</strong></i>
       <select
         id="dietSelect"
         name="dietSelect"
@@ -45,7 +46,7 @@
         <option value="None">None</option>
       </select>
       <br>
-      <i><strong>Choose a Characteristic:</strong></i>
+      <i><strong>Please Choose a Characteristic:</strong></i>
       <select class="sumo" name="characterSelect">
         <option value=""></option>
         <option value="Diabetic">Diabetic</option>
@@ -61,9 +62,9 @@
     </div>
 
     <div id="Products" class="tabcontent">
-      <h3>Your targeted products</h3>
-      <p>We preselected products based on your restrictions.</p>
-      <i><strong>Choose items to buy:</strong></i>
+      <h3>Your Products</h3>
+      <p>The products according to the categories and characteristics you have chosen will appear here.</p>
+      <i style="font-size:20px;"><strong>Please Choose the Items you are going to buy:</strong></i>
       <div id="displayProduct"></div>
       <button
         id="addCart"
@@ -71,7 +72,7 @@
         class="block"
         onclick="selectedItems()"
       >
-        Add selected items to cart.
+        Click Here to Add Selected Items.
       </button>
     <div class="footer">
       <p class="copyright">
@@ -83,8 +84,8 @@
     </div>
 
     <div id="Cart" class="tabcontent">
-      <h3>Cart</h3>
-      <p>Here is your cart.</p>
+      <h3>Shopping Cart</h3>
+      <p>The items you have added to your list will appear here.</p>
       <div id="displayCart"></div>
 
       <div class="footer">

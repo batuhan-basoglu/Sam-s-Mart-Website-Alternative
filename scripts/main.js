@@ -33,6 +33,8 @@ function populateListProductChoices(slct1, slct2) {
 	
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
+	s2.appendChild(document.createElement("br"));
+	s2.appendChild(document.createElement("br"));
 		
 	// obtain a reduced list of products based on restrictions
 	var optionArray = restrictListProducts(products, s1.value);
@@ -95,7 +97,8 @@ function selectedItems(){
 	
 	// build list of selected item
 	var para = document.createElement("P");
-	para.innerHTML = "You selected : ";
+	para.innerHTML = "You have selected : ";
+	para.appendChild(document.createElement("br"));
 	para.appendChild(document.createElement("br"));
 
 	
