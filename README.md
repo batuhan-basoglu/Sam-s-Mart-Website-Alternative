@@ -1,4 +1,4 @@
-# SEG3125-LAB2
+# SEG3125-LAB3
 
 The alternative website of a Sam's Grocery Store made by Ruchira Perrera, Sam Oyediran, Batuhan Basoglu, and Kene Ojukwu
 
