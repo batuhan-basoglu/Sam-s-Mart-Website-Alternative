@@ -63,7 +63,6 @@ function populateListProductChoices(slct1, slct2) {
 		// var itemPrice = getItemPrice(productName);
 		// label.appendChild(document.createTextNode(" $" + itemPrice));
 
-
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
@@ -83,6 +82,7 @@ function populateListProductChoices(slct1, slct2) {
 	}
 }
 	
+
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
