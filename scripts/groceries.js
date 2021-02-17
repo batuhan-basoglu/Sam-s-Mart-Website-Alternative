@@ -161,13 +161,13 @@ function getProductImg(productName) {
 function restrictListProducts(prods, restriction) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
+		if ((restriction === "Vegetarian") && (prods[i].vegetarian == true)){
 			product_names.push(prods[i].name);
 		}
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
 			product_names.push(prods[i].name);
 		}
-		else if ((restriction == "VegetarianANDGluten-Free") && (prods[i].glutenFree == true) && (prods[i].vegetarian == true)){
+		else if ((restriction == "Vegetarian" && restriction == "GlutenFree") && (prods[i].glutenFree == true) && (prods[i].vegetarian == true)){
 			product_names.push(prods[i].name);
 		}
 		else if ((restriction == "Organic") && (prods[i].organic == true)){
@@ -198,7 +198,7 @@ function filterProduct(prod, filter) {
 		else if ( filter === "Dairy" && prod[i].Dairy === true) {
 			prod_filter.push(prod[i].name);
 		}
-		else if ( filter === "Meat&SeaFood" && prod[i].MeatandSeafood === true) {
+		else if ( filter === "Meat&Seafood" && prod[i].MeatandSeafood === true) {
 			prod_filter.push(prod[i].name);
 		}
 		else if ( filter === "Bakery" && prod[i].Bakery === true) {
