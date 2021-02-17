@@ -23,57 +23,60 @@ function openInfo(evt, tabName) {
 // it makes each product name as the label for the checkbos
 
 function populateListProductChoices(slct1, slct2) {
-  var s1 = document.getElementById(slct1)
-  var s2 = document.getElementById(slct2)
+    var s1 = document.getElementById(slct1);
+    var s2 = document.getElementById(slct2);
+	
+	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
+    s2.innerHTML = "";
+	s2.appendChild(document.createElement("br"));
+	s2.appendChild(document.createElement("br"));
+		
+	// obtain a reduced list of products based on restrictions
+	var optionArray = restrictListProducts(products, s1.value);
 
-  // s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
-  s2.innerHTML = ''
-  s2.appendChild(document.createElement('br'))
-  s2.appendChild(document.createElement('br'))
+	// for each item in the array, create a checkbox element, each containing information such as:
+	// <input type="checkbox" name="product" value="Bread">
+	// <label for="Bread">Bread/label><br>
+		
+	for (i = 0; i < optionArray.length; i++) {
+			
+		var productName = optionArray[i];
+		// create the checkbox and add in HTML DOM
+		var checkbox = document.createElement("input");
+		checkbox.type = "checkbox";
+		checkbox.name = "product";
+		checkbox.value = productName;
+		s2.appendChild(checkbox);
+		
+		// create a label for the checkbox, and also add in HTML DOM
+		var label = document.createElement('label')
+		label.htmlFor = productName;
+		var itemPrice = getItemPrice(productName);
+		label.appendChild(document.createTextNode(productName + " $" + itemPrice));
 
-  // obtain a reduced list of products based on restrictions
-  var optionArray = restrictListProducts(products, s1.value)
+		// //get price of an item 
+		// var itemPrice = getItemPrice(productName);
+		// label.appendChild(document.createTextNode(" $" + itemPrice));
 
-  // for each item in the array, create a checkbox element, each containing information such as:
-  // <input type="checkbox" name="product" value="Bread">
-  // <label for="Bread">Bread/label><br>
+		s2.appendChild(label);
+		
+		// create a breakline node and add in HTML DOM
+		s2.appendChild(document.createElement("br"));   
+		
+		//create <img src="">
+		var prodImg = document.createElement("img");
+		prodImg.src = getProductImg(productName);
+		// prodImg = document.getElementById("displayProduct");
+		// console.log("trial", prodImg.src);
+		s2.appendChild(prodImg);
 
-  for (i = 0; i < optionArray.length; i++) {
-    var productName = optionArray[i]
-    // create the checkbox and add in HTML DOM
-    var checkbox = document.createElement('input')
-    checkbox.type = 'checkbox'
-    checkbox.name = 'product'
-    checkbox.value = productName
-    s2.appendChild(checkbox)
+		//use this to space the images 
+		s2.appendChild(document.createElement("br"));
+		s2.appendChild(document.createElement("br"));
 
-    // create a label for the checkbox, and also add in HTML DOM
-    var label = document.createElement('label')
-    label.htmlFor = productName
-    var itemPrice = getItemPrice(productName)
-    label.appendChild(document.createTextNode(productName + ' $' + itemPrice))
-
-    // //get price of an item
-    // var itemPrice = getItemPrice(productName);
-    // label.appendChild(document.createTextNode(" $" + itemPrice));
-
-    s2.appendChild(label)
-
-    // create a breakline node and add in HTML DOM
-    s2.appendChild(document.createElement('br'))
-
-    //create <img src="">
-    var prodImg = document.createElement('img')
-    prodImg.src = getProductImg(productName)
-    // prodImg = document.getElementById("displayProduct");
-    // console.log("trial", prodImg.src);
-    s2.appendChild(prodImg)
-
-    //use this to space the images
-    s2.appendChild(document.createElement('br'))
-    s2.appendChild(document.createElement('br'))
-  }
+	}
 }
+	
 
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph)

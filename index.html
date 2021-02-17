@@ -25,30 +25,28 @@
     <!-- Tab content -->
     <div id="Client" class="tabcontent">
       <h3>Client Information</h3>
-      <p>
-        Hello, welcome to our grocery store.
-        <br />
-        We are here to help you choose the perfect groceries for your store.
-      </p>
+      <p>Hello, welcome to our grocery store. <br> 
+        We are here to help you choose the perfect groceries.</p>
       <i><strong>Please Choose a Category:</strong></i>
-      <select
-        id="dietSelect"
-        name="dietSelect"
-        class="sumo"
-        onchange="populateListProductChoices(this.id, 'displayProduct')"
-      >
-        <option value=""></option>
+     
+      <br>
+      <label for="category-foods1"> Vegetarian</label>
+      <input type="checkbox" id ="Vegetarian" value="Vegetarian" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <br>
 
-        <option value="Vegetarian">Vegetarian</option>
-        <option value="GlutenFree">Gluten Free</option>
-        <option value="VegetarianANDGluten-Free">
-          Vegetarian and Gluten-Free
-        </option>
-        <option value="Organic">Organic</option>
-        <option value="Non-organic">Non-Organic</option>
-        <option value="None">None</option>
-      </select>
-      <br />
+      <label for="category-foods1"> Gluten-Free</label>
+      <input type="checkbox" id="GlutenFree" value="GlutenFree" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <br>
+      <label for="category-foods1"> Organic</label>
+      <input type="checkbox" id="Organic" value="Organic" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <br>
+      <label for="category-foods1"> Non-Organic</label>
+      <input type="checkbox" id="Non-Organic" value="Non-Organic" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <br>
+      <label for="category-foods1"> None</label>
+      <input type="checkbox" id="None" value="None" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <br>
+     
       <i><strong>Please Choose a Characteristic:</strong></i>
       <select class="sumo" name="characterSelect">
         <option value=""></option>
@@ -107,7 +105,10 @@
     <div id="Cart" class="tabcontent">
       <h3>Shopping Cart</h3>
       <p>The items you have added to your list will appear here.</p>
-      <div id="displayCart"></div>
+      <div id="displayCart">
+         
+      </div>
+
       <div class="footer">
         <p class="copyright">
           Website created by Ruchira, Sam, Batuhan, and Kene
