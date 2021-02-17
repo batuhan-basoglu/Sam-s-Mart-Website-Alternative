@@ -9,7 +9,13 @@ var products = [
 		glutenFree: true,
 		organic: true, 
 		price: 1.99,
-		productImg: "images/broccoli.png" 
+		productImg: "images/broccoli.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: true,  
+		Pantry: false, 
+		Bakery: false,
+		MeatandSeafood: false
 	},
 	{
 		name: "bread",
@@ -17,7 +23,13 @@ var products = [
 		glutenFree: false,
 		organic: false, 
 		price: 2.35,
-		productImg: "images/bread.png"
+		productImg: "images/bread.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: false,  
+		Pantry: false, 
+		Bakery: true,
+		MeatandSeafood: false
 	},
 	{
 		name: "salmon",
@@ -25,7 +37,13 @@ var products = [
 		glutenFree: true,
 		organic: false, 
 		price: 10.00,
-		productImg: "images/salmon.png"
+		productImg: "images/salmon.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: false,  
+		Pantry: false, 
+		Bakery: false,
+		MeatandSeafood: true
 	},
 	{
 		name: "carrot",
@@ -33,7 +51,13 @@ var products = [
 		glutenFree: true,
 		organic: true, 
 		price: 2.63,
-		productImg: "images/carrot.png"
+		productImg: "images/carrot.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: true,  
+		Pantry: false, 
+		Bakery: false,
+		MeatandSeafood: false
 	},
 	{
 		name: "chicken",
@@ -41,7 +65,13 @@ var products = [
 		glutenFree: true,
 		organic: false, 
 		price: 6.87,
-		productImg: "images/chicken.png"
+		productImg: "images/chicken.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: false,  
+		Pantry: false, 
+		Bakery: false,
+		MeatandSeafood: true
 	},
 	{
 		name: "cereal",
@@ -49,7 +79,13 @@ var products = [
 		glutenFree: false,
 		organic: false, 
 		price: 2.97,
-		productImg: "images/cereal.png"
+		productImg: "images/cereal.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: false,  
+		Pantry: true, 
+		Bakery: false,
+		MeatandSeafood: false
 	},
 	{
 		name: "cheese",
@@ -57,7 +93,13 @@ var products = [
 		glutenFree: false,
 		organic: false, 
 		price: 5.14,
-		productImg: "images/cheese.png"
+		productImg: "images/cheese.png",
+		Fruits: false,
+		Dairy: true, 
+		Vegetables: false,  
+		Pantry: false, 
+		Bakery: false,
+		MeatandSeafood: false
 	},
 	{
 		name: "white fish",
@@ -65,7 +107,13 @@ var products = [
 		glutenFree: true,
 		organic: false, 
 		price: 13.50,
-		productImg: "images/white-fish.png"
+		productImg: "images/white-fish.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: false,  
+		Pantry: false, 
+		Bakery: false,
+		MeatandSeafood: true
 	},
 	{
 		name: "honey",
@@ -73,7 +121,13 @@ var products = [
 		glutenFree: false,
 		organic: true, 
 		price: 1.89,
-		productImg: "images/honey.png"
+		productImg: "images/honey.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: false,  
+		Pantry: true, 
+		Bakery: false,
+		MeatandSeafood: false
 	},
 	{
 		name: "onion",
@@ -81,7 +135,13 @@ var products = [
 		glutenFree: true,
 		organic: true, 
 		price: 2.22,
-		productImg: "images/onion.png"
+		productImg: "images/onion.png",
+		Fruits: false,
+		Dairy: false, 
+		Vegetables: true,  
+		Pantry: false, 
+		Bakery: false,
+		MeatandSeafood: false
 	}
 ];
 
@@ -122,6 +182,35 @@ function restrictListProducts(prods, restriction) {
 	}
 	return product_names;
 }
+
+function filterProduct(prod, filter) {
+	let prod_filter = [];
+	for(let i=0; i < prod.length; i++) {
+		if ( filter === "Fruits" && prod[i].Fruits === true ) {
+			prod_filter.push(prod[i].name);
+		}
+		else if ( filter === "Vegetables" && prod[i].Vegetables === true ) {
+			prod_filter.push(prod[i].name);
+		}
+		else if ( filter === "Pantry" && prod[i].Pantry === true ) {
+			prod_filter.push(prod[i].name);
+		}
+		else if ( filter === "Dairy" && prod[i].Dairy === true) {
+			prod_filter.push(prod[i].name);
+		}
+		else if ( filter === "Meat&SeaFood" && prod[i].MeatandSeafood === true) {
+			prod_filter.push(prod[i].name);
+		}
+		else if ( filter === "Bakery" && prod[i].Bakery === true) {
+			prod_filter.push(prod[i].name);
+		}
+		// else if ( filter === "None" ){
+		// 	prod_filter.push(prod[i].name);
+		// }
+	}
+	return prod_filter;
+}
+
 
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {

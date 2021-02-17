@@ -8,7 +8,7 @@
   <body>
     <div class="company-name">
       <h1>Sam's Mart</h1>
-      <img class="cart-img" src="images/logo.png" alt="mart-img"> 
+      <img class="cart-img" src="images/logo.png" alt="mart-img" />
     </div>
 
     <!-- Tab links, each one with an onclick event associated with it -->
@@ -25,8 +25,11 @@
     <!-- Tab content -->
     <div id="Client" class="tabcontent">
       <h3>Client Information</h3>
-      <p>Hello, welcome to our grocery store. <br> 
-        We are here to help you choose the perfect groceries for your store.</p>
+      <p>
+        Hello, welcome to our grocery store.
+        <br />
+        We are here to help you choose the perfect groceries for your store.
+      </p>
       <i><strong>Please Choose a Category:</strong></i>
       <select
         id="dietSelect"
@@ -45,7 +48,7 @@
         <option value="Non-organic">Non-Organic</option>
         <option value="None">None</option>
       </select>
-      <br>
+      <br />
       <i><strong>Please Choose a Characteristic:</strong></i>
       <select class="sumo" name="characterSelect">
         <option value=""></option>
@@ -54,17 +57,37 @@
       </select>
 
       <div class="footer">
-      <p class="copyright">
-        Website created by Ruchira, Sam, Batuhan, and Kene
-      </p>
-    </div>
-
+        <p class="copyright">
+          Website created by Ruchira, Sam, Batuhan, and Kene
+        </p>
+      </div>
     </div>
 
     <div id="Products" class="tabcontent">
       <h3>Your Products</h3>
-      <p>The products according to the categories and characteristics you have chosen will appear here.</p>
-      <i style="font-size:20px;"><strong>Please Choose the Items you are going to buy:</strong></i>
+      <p>
+        The products according to the categories and characteristics you have
+        chosen will appear here.
+      </p>
+      <i style="font-size: 20px;">
+        <strong>Please Choose the Items you are going to buy:</strong>
+      </i>
+      <br />
+      <i><strong>Please Choose a filter:</strong></i>
+      <select
+        id="filterProduct"
+        name="filterProduct"
+        class="filter-section"
+        onchange="filterProducts(this.id, 'displayProduct')"
+      >
+        <option value=""></option>
+        <option value="Fruits">Fruits</option>
+        <option value="Vegetables">Vegetables</option>
+        <option value="Pantry">Pantry</option>
+        <option value="Dairy">Dairy</option>
+        <option value="Bakery">Bakery</option>
+        <option value="Meat&Seafood">Meat&Seafood</option>
+      </select>
       <div id="displayProduct"></div>
       <button
         id="addCart"
@@ -74,32 +97,26 @@
       >
         Click Here to Add Selected Items
       </button>
-    <div class="footer">
-      <p class="copyright">
-        Website created by Ruchira, Sam, Batuhan, and Kene
-      </p>
-    </div>
-
-
+      <div class="footer">
+        <p class="copyright">
+          Website created by Ruchira, Sam, Batuhan, and Kene
+        </p>
+      </div>
     </div>
 
     <div id="Cart" class="tabcontent">
       <h3>Shopping Cart</h3>
       <p>The items you have added to your list will appear here.</p>
       <div id="displayCart"></div>
-
       <div class="footer">
-      <p class="copyright">
-        Website created by Ruchira, Sam, Batuhan, and Kene
-      </p>
+        <p class="copyright">
+          Website created by Ruchira, Sam, Batuhan, and Kene
+        </p>
+      </div>
     </div>
-
-    </div>
-
 
     <script src="scripts/groceries.js"></script>
 
     <script src="scripts/main.js"></script>
-
   </body>
 </html>
