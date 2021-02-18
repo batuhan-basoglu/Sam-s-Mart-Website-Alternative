@@ -3,23 +3,35 @@
   <head>
     <!--This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp -->
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
+
+  
+    <div class="navbar">
+      
     <div class="company-name">
-      <h1>Sam's Mart</h1>
-      <img class="cart-img" src="images/logo.png" alt="mart-img" />
+      <h1 >Sam's Mart</h1>
     </div>
+      <a onclick="openInfo(event, 'Cart')" class ="icon"><i class="fa fa-shopping-cart"></i> Cart</a> 
+      <a onclick="openInfo(event, 'Products')" class ="icon"><i class="fa fa-list-ul icon"></i> Product</a> 
+      <a onclick="openInfo(event, 'Client')" class ="icon"><i class="fa fa-fw fa-user icon"></i> Client</a>
+    </div>
+
+
+
 
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
-      <button class="tablinks" onclick="openInfo(event, 'Client')">
+      <button class="tablinks" id="client" onclick="openInfo(event, 'Client')">
         Client
       </button>
-      <button class="tablinks" onclick="openInfo(event, 'Products')">
+      <button class="tablinks" id="products" onclick="openInfo(event, 'Products')">
         Products
       </button>
-      <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+      <button class="tablinks" id="cart" onclick="openInfo(event, 'Cart')">Cart</button>
     </div>
 
     <!-- Tab content -->
@@ -33,7 +45,6 @@
       <label for="category-foods1"> Vegetarian</label>
       <input type="checkbox" id ="Vegetarian" value="Vegetarian" onchange="populateListProductChoices(this.id, 'displayProduct')">
       <br>
-
       <label for="category-foods1"> Gluten-Free</label>
       <input type="checkbox" id="GlutenFree" value="GlutenFree" onchange="populateListProductChoices(this.id, 'displayProduct')">
       <br>
