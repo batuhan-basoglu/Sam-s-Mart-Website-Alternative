@@ -1,7 +1,7 @@
 	
 // Array of products, each product is an object with different fieldset
 // A set of ingredients should be added to products		 
-
+var filtered = [];
 var products = [
 	{
 		name: "broccoli",
@@ -89,7 +89,7 @@ var products = [
 	},
 	{
 		name: "cheese",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: false,
 		organic: false, 
 		price: 5.14,
@@ -154,7 +154,6 @@ function getProductImg(productName) {
 	return prodVal.productImg;
 }
 
-
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
@@ -184,29 +183,36 @@ function restrictListProducts(prods, restriction) {
 }
 
 function filterProduct(prod, filter) {
+
 	let prod_filter = [];
 	for(let i=0; i < prod.length; i++) {
-		if ( filter === "Fruits" && prod[i].Fruits === true ) {
-			prod_filter.push(prod[i].name);
+
+		//filteredArray = prod.find();
+		var prodVal = products.find(prod1 => prod1.name === prod[i]);
+
+		console.log("test", prodVal);
+
+		if ( filter === "Fruits" && prodVal.Fruits === true ) {
+			prod_filter.push(prodVal.name);
 		}
-		else if ( filter === "Vegetables" && prod[i].Vegetables === true ) {
-			prod_filter.push(prod[i].name);
+		else if ( filter === "Vegetables" && prodVal.Vegetables === true ) {
+			prod_filter.push(prodVal.name);
 		}
-		else if ( filter === "Pantry" && prod[i].Pantry === true ) {
-			prod_filter.push(prod[i].name);
+		else if ( filter === "Pantry" && prodVal.Pantry === true ) {
+			prod_filter.push(prodVal.name);
 		}
-		else if ( filter === "Dairy" && prod[i].Dairy === true) {
-			prod_filter.push(prod[i].name);
+		else if ( filter === "Dairy" && prodVal.Dairy === true) {
+			prod_filter.push(prodVal.name);
 		}
-		else if ( filter === "Meat&Seafood" && prod[i].MeatandSeafood === true) {
-			prod_filter.push(prod[i].name);
+		else if ( filter === "Meat&Seafood" && prodVal.MeatandSeafood === true) {
+			prod_filter.push(prodVal.name);
 		}
-		else if ( filter === "Bakery" && prod[i].Bakery === true) {
-			prod_filter.push(prod[i].name);
+		else if ( filter === "Bakery" && prodVal.Bakery === true) {
+			prod_filter.push(prodVal.name);
 		}
-		// else if ( filter === "None" ){
-		// 	prod_filter.push(prod[i].name);
-		// }
+		 else if ( filter === "" ){
+		 	prod_filter.push(prodVal.name);
+		}
 	}
 	return prod_filter;
 }

@@ -47,10 +47,10 @@
 h1{
   font-family: "Britannic Bold ", sans-serif;
   font-weight: bolder;
-  font-size: 50px;
-  color: #f7fcfc;
-  vertical-align: middle;
-  display: inline;
+  color: #ffffff;
+  display:inline;
+  font-size: 3rem;
+
   /* margin-right: 15px; */
 
 }
@@ -91,6 +91,10 @@ img{
 
 .company-name {
   text-align: left;
+  float: left;
+  display:inline;
+  padding-left: 10px;
+  
 }
 .cart-img {
   height: 5%; 
@@ -123,4 +127,51 @@ i {
 
 .sumo{
   font-size: 15px;
+}
+
+
+/*
+
+source: 
+https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
+
+*/
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: rgb(212, 100, 100);
+  overflow: auto;
+  
+}
+
+/* Navbar links */
+.navbar a {
+  float: right;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: rgb(53, 172, 166);
+}
+
+/* Current/active navbar link */
+.active {
+}
+
+a.icon{
+  font-size: 25px;
+
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
 }
