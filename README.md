@@ -1,8 +1,8 @@
-# SEG3125-LAB3
+# Sam's Mart Website Alternative
 
 The alternative website of a Sam's Grocery Store made by Ruchira Perrera, Sam Oyediran, Batuhan Basoglu, and Kene Ojukwu
 
-https://arctichawk1.github.io/SEG3125-LAB3/
+https://arctichawk1.github.io/Sam-s-Mart-Website-Alternative/
 
 # Authors
 
