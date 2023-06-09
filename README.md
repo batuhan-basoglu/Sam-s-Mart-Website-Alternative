@@ -2,8 +2,6 @@
 
 The alternative website of a Sam's Grocery Store made by Ruchira Perrera, Sam Oyediran, Batuhan Basoglu, and Kene Ojukwu
 
-https://arctichawk1.github.io/Sam-s-Mart-Website-Alternative/
-
 # Authors
 
 - Batuhan Basoglu, 300001274 - ArcticHawk1
