@@ -15,8 +15,8 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACTIONS_SSH_KEY }}
         with:
-          source-repo: "git@github.com:batuhan-basoglu/batuhan-basoglu.git"
-          destination-repo: "git@gitlab.com:batuhan-basoglu/batuhan-basoglu.git"
+          source-repo: "git@github.com:batuhan-basoglu/Sam-s-Mart-Website-Alternative.git"
+          destination-repo: "git@gitlab.com:batuhan-basoglu/Sam-s-Mart-Website-Alternative.git"
 
   codeberg:
     runs-on: ubuntu-latest
@@ -26,5 +26,5 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACTIONS_SSH_KEY }}
         with:
-          source-repo: "git@github.com:batuhan-basoglu/batuhan-basoglu.git"
-          destination-repo: "git@codeberg.org:batuhan-basoglu/batuhan-basoglu.git"
+          source-repo: "git@github.com:batuhan-basoglu/Sam-s-Mart-Website-Alternative.git"
+          destination-repo: "git@codeberg.org:batuhan-basoglu/Sam-s-Mart-Website-Alternative.git"
